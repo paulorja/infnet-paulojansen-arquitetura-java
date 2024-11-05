@@ -2,6 +2,9 @@ package br.edu.infnet.paulojansen.model.domain;
 
 import java.util.List;
 
+import jakarta.persistence.Entity;
+
+@Entity
 public class Passageiro {
 	private String nome;
 	private String cpf;

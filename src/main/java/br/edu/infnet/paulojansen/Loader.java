@@ -22,6 +22,8 @@ public class Loader implements ApplicationRunner {
 
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
+		System.out.println("Iniciando loader...");
+
 		FileReader file = new FileReader("files/passageiros.txt");
 		BufferedReader leitura = new BufferedReader(file);
 		

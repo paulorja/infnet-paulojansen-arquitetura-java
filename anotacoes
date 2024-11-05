@@ -1,0 +1,44 @@
+spring.h2.console.enabled=true
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.url=jdbc:h2:~/elberthdb
+spring.datasource.username=sa
+spring.datasource.password=
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=create
+
+
+
+<dependency>
+	<groupId>org.hibernate</groupId>
+	<artifactId>hibernate-core</artifactId>
+</dependency>
+
+ 
+
+<dependency>
+	<groupId>org.hibernate</groupId>
+	<artifactId>hibernate-entitymanager</artifactId>
+</dependency>
+
+ 
+
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-data-jpa</artifactId>
+</dependency>
+
+
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-jpa</artifactId>
+    <version>3.3.4</version>
+</dependency>
+
+ 
+
+<dependency>
+	<groupId>com.h2database</groupId>
+	<artifactId>h2</artifactId>
+	<scope>runtime</scope>
+</dependency>
