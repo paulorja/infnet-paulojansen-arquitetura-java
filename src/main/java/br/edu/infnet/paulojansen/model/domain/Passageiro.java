@@ -3,8 +3,10 @@ package br.edu.infnet.paulojansen.model.domain;
 import java.util.List;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "TPassageiro")
 public class Passageiro {
 	private String nome;
 	private String cpf;

@@ -2,6 +2,9 @@ package br.edu.infnet.paulojansen;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -23,6 +26,17 @@ public class Loader implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		System.out.println("Iniciando loader...");
+		Connection conn = DriverManager.getConnection("jdbc:h2:mem:testdb", "sa", "");
+		Statement stmt = conn.createStatement();
+
+        String sql = "CREATE TABLE IF NOT EXISTS produto (" +
+                     "id INT AUTO_INCREMENT PRIMARY KEY, " +
+                     "nome VARCHAR(255), " +
+                     "preco DECIMAL(10, 2))";
+        stmt.execute(sql);
+
+        System.out.println("Banco de dados H2 em memória criado com sucesso!");
+
 
 		FileReader file = new FileReader("files/passageiros.txt");
 		BufferedReader leitura = new BufferedReader(file);

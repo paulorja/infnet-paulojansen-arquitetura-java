@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.paulojansen.model.domain.Passageiro;
-import br.edu.infnet.paulojansen.model.repository.PassageiroRepository;
 
 @Service
 public class PassageiroService {
