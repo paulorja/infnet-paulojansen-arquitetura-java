@@ -3,16 +3,23 @@ package br.edu.infnet.paulojansen.model.domain;
 import java.util.List;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "TPassageiro")
 public class Passageiro {
+	
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 	private String nome;
 	private String cpf;
 	private String email;
-	private Endereco endereco;
-	private List<Reserva> reservas;
+	//private Endereco endereco;
+	//private List<Reserva> reservas;
 	
 	public Passageiro(String nome, String cpf, String email) {
 		this.nome = nome;
@@ -26,10 +33,13 @@ public class Passageiro {
 		return String.format("[%s] Passageiro %s cadastrado com sucesso! %s; Produtos: %d",
 				cpf,
 				nome,
-				endereco,
+				//endereco,
 				1 // reservas.size()
 			);
 		}
+	
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 	
 	public String getNome() {
 		return nome;
@@ -50,11 +60,11 @@ public class Passageiro {
 		this.email = email;
 	}
 
-	public Endereco getEndereco() {
-		return endereco;
-	}
+	//public Endereco getEndereco() {
+	//	return endereco;
+	//}
 
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
-	}
+	//public void setEndereco(Endereco endereco) {
+	//	this.endereco = endereco;
+	//}
 }

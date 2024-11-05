@@ -52,7 +52,7 @@ public class Loader implements ApplicationRunner {
 				
 				Endereco endereco = new Endereco();
 				endereco.setCep("09110090");
-				passageiro.setEndereco(endereco);
+				//passageiro.setEndereco(endereco);
 				
 				passageiroService.incluir(passageiro);
 				
@@ -67,7 +67,7 @@ public class Loader implements ApplicationRunner {
 		}
 		
 		for(Passageiro passageiro: passageiroService.obterLista()) {
-			System.out.println(passageiro);
+			//System.out.println(passageiro);
 		}
 		
 		leitura.close();
