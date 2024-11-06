@@ -15,18 +15,18 @@ public class Passageiro {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+	
 	private String nome;
 	private String cpf;
 	private String email;
 	//private Endereco endereco;
 	//private List<Reserva> reservas;
 	
-	public Passageiro(String nome, String cpf, String email) {
-		this.nome = nome;
-		this.cpf = cpf;
-		this.email = email;
-		
-	}
+	//public Passageiro(String nome, String cpf, String email) {
+	//	this.nome = nome;
+	//	this.cpf = cpf;
+	//	this.email = email;	
+	//}
 	
 	@Override
 	public String toString() {

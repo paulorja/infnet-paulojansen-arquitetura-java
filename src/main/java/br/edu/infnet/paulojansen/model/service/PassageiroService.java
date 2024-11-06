@@ -1,5 +1,6 @@
 package br.edu.infnet.paulojansen.model.service;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
@@ -32,7 +33,14 @@ public class PassageiroService {
 	}
 	
 	public Collection<Passageiro> obterLista() {
-		return mapaPassageiros.values();
+		//List<Passageiro>  passageiros = new ArrayList<>();
+		//passageiroRepository.findAll().forEach(passageiros::add);
+		//return passageiros;
+		return (Collection<Passageiro>) passageiroRepository.findAll();
 	}
+
+	//public List<Passageiro> obterPorNome(String nome) {
+	//	return passageiroRepository.findByNomeContaining(nome);
+	//}
 
 }

@@ -1,9 +1,11 @@
 package br.edu.infnet.paulojansen.controller;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.edu.infnet.paulojansen.model.domain.Passageiro;
@@ -19,4 +21,10 @@ public class PassageiroController {
 	public Collection<Passageiro> obterLista() {
 		return passageiroService.obterLista();
 	}
+	
+	//@GetMapping(value = "/buscar/passageiros/{nome}")
+	//public List<Passageiro> obterPorNome(@PathVariable String nome){
+	//	return passageiroService.obterPorNome(nome);
+	//}	
+	
 }

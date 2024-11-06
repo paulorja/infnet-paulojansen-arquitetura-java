@@ -48,7 +48,11 @@ public class Loader implements ApplicationRunner {
 			Passageiro passageiro = null;
 			switch (campos[0].toUpperCase()) {
 			case "P":
-				passageiro = new Passageiro(campos[1], campos[2], campos[3]);
+				//passageiro = new Passageiro(campos[1], campos[2], campos[3]);
+				passageiro = new Passageiro();
+				passageiro.setNome(campos[1]);
+				passageiro.setCpf(campos[2]);
+				passageiro.setEmail(campos[3]);
 				
 				Endereco endereco = new Endereco();
 				endereco.setCep("09110090");
