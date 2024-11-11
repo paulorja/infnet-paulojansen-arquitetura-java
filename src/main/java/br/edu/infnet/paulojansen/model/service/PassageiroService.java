@@ -38,6 +38,11 @@ public class PassageiroService {
 		//return passageiros;
 		return (Collection<Passageiro>) passageiroRepository.findAll();
 	}
+	
+	public Passageiro obterPorId(Long id) {
+		return passageiroRepository.findById(id).orElse(null);
+	}
+
 
 	//public List<Passageiro> obterPorNome(String nome) {
 	//	return passageiroRepository.findByNomeContaining(nome);

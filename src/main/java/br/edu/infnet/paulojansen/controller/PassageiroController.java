@@ -22,6 +22,11 @@ public class PassageiroController {
 		return passageiroService.obterLista();
 	}
 	
+	@GetMapping(value = "/passageiros/{id}")
+	public Passageiro obterPorId(@PathVariable Long id) {
+		return passageiroService.obterPorId(id);
+	}
+	
 	//@GetMapping(value = "/buscar/passageiros/{nome}")
 	//public List<Passageiro> obterPorNome(@PathVariable String nome){
 	//	return passageiroService.obterPorNome(nome);
