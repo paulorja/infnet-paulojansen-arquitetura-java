@@ -65,6 +65,134 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Passageiro Alterar",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/passageiros/alterar?id=2&nome=Novo Nome&cpf=5557898555&email=novo@email.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"passageiros",
+						"alterar"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						},
+						{
+							"key": "nome",
+							"value": "Novo Nome"
+						},
+						{
+							"key": "cpf",
+							"value": "5557898555"
+						},
+						{
+							"key": "email",
+							"value": "novo@email.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reservas Detalhes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/reservas/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reservas",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rservas Listagem",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/reservas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reservas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Rservas Excluir",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/reservas/1/excluir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reservas",
+						"1",
+						"excluir"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reservas Alterar",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/reseras/alterar?id=1&preco=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reseras",
+						"alterar"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						},
+						{
+							"key": "preco",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
