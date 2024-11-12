@@ -1,0 +1,70 @@
+{
+	"info": {
+		"_postman_id": "1a4e4bc8-5da2-42e3-b27f-7cc501929c2c",
+		"name": "Trab Java Infnet Paulo Jansen",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39662894"
+	},
+	"item": [
+		{
+			"name": "Passageiro Detalhes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/passageiros/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"passageiros",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Passageiro Listagem",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/passageiros",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"passageiros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Passageiro Excluir",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/passageiros/1/excluir",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"passageiros",
+						"1",
+						"excluir"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
