@@ -42,6 +42,11 @@ public class PassageiroService {
 	public Passageiro obterPorId(Long id) {
 		return passageiroRepository.findById(id).orElse(null);
 	}
+	
+	public void excluir(Long id) {
+		passageiroRepository.deleteById(id);		
+	}
+
 
 
 	//public List<Passageiro> obterPorNome(String nome) {
