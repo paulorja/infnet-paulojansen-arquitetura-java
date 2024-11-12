@@ -46,6 +46,12 @@ public class PassageiroService {
 	public void excluir(Long id) {
 		passageiroRepository.deleteById(id);		
 	}
+	
+	public Passageiro alterar(Long id, String nome) {
+		Passageiro passageiro = passageiroRepository.findById(id).orElse(null);
+		passageiro.setNome(nome);
+		return passageiroRepository.save(passageiro);
+	}
 
 
 
