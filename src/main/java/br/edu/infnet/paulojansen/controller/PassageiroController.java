@@ -39,8 +39,8 @@ public class PassageiroController {
 	}
 	
 	@PatchMapping(value = "/passageiros/alterar")
-	public ResponseEntity<Passageiro> alterar(@RequestParam Long id, @RequestParam String nome) {
-		Passageiro passageiro = passageiroService.alterar(id, nome);
+	public ResponseEntity<Passageiro> alterar(@RequestParam Long id, @RequestParam String nome, @RequestParam String cpf, @RequestParam String email) {
+		Passageiro passageiro = passageiroService.alterar(id, nome, cpf, email);
 		return ResponseEntity.ok(passageiro);
 	}
 	

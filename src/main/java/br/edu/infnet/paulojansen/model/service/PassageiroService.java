@@ -47,9 +47,11 @@ public class PassageiroService {
 		passageiroRepository.deleteById(id);		
 	}
 	
-	public Passageiro alterar(Long id, String nome) {
+	public Passageiro alterar(Long id, String nome, String cpf, String email) {
 		Passageiro passageiro = passageiroRepository.findById(id).orElse(null);
 		passageiro.setNome(nome);
+		passageiro.setCpf(cpf);
+		passageiro.setEmail(email);
 		return passageiroRepository.save(passageiro);
 	}
 
