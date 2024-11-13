@@ -1,5 +1,7 @@
 package br.edu.infnet.paulojansen.model.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -19,6 +21,7 @@ public class Reserva {
 	
 	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "idPassageiro")
+	@JsonBackReference
 	private Passageiro passageiro;
 	
 	//@OneToOne(cascade = CascadeType.PERSIST)

@@ -1,13 +1,18 @@
 package br.edu.infnet.paulojansen.model.domain;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -26,13 +31,20 @@ public class Passageiro {
 	@OneToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "idEndereco")
 	private Endereco endereco;
-	//private List<Reserva> reservas;
+	
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "passageiro")
+	@JsonManagedReference
+	private List<Reserva> reservas;
 	
 	//public Passageiro(String nome, String cpf, String email) {
 	//	this.nome = nome;
 	//	this.cpf = cpf;
 	//	this.email = email;	
 	//}
+	
+	public Passageiro() {
+		reservas = new ArrayList<Reserva>();
+	}
 	
 	@Override
 	public String toString() {
@@ -71,4 +83,11 @@ public class Passageiro {
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
+	public List<Reserva> getReservas() {
+		return reservas;
+	}
+	public void setProdutos(List<Reserva> reservas) {
+		this.reservas = reservas;
+	}
+
 }
