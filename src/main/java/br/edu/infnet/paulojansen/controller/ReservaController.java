@@ -42,7 +42,6 @@ public class ReservaController {
 		return ResponseEntity.status(HttpStatus.CREATED).body("Reserva cadastrada!");
 	}
 	
-	
 	@DeleteMapping(value = "/reservas/{id}/excluir")
 	public String excluir(@PathVariable Long id) {
 		reservaService.excluir(id);

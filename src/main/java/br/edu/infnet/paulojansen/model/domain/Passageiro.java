@@ -2,10 +2,13 @@ package br.edu.infnet.paulojansen.model.domain;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -19,7 +22,10 @@ public class Passageiro {
 	private String nome;
 	private String cpf;
 	private String email;
-	//private Endereco endereco;
+	
+	@OneToOne(cascade = CascadeType.PERSIST)
+	@JoinColumn(name = "idEndereco")
+	private Endereco endereco;
 	//private List<Reserva> reservas;
 	
 	//public Passageiro(String nome, String cpf, String email) {
@@ -59,12 +65,10 @@ public class Passageiro {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-	//public Endereco getEndereco() {
-	//	return endereco;
-	//}
-
-	//public void setEndereco(Endereco endereco) {
-	//	this.endereco = endereco;
-	//}
+	public Endereco getEndereco() {
+		return endereco;
+	}
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
 }
