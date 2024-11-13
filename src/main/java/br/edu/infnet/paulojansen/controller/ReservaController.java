@@ -8,9 +8,11 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import br.edu.infnet.paulojansen.model.domain.Passageiro;
@@ -33,6 +35,13 @@ public class ReservaController {
 	public Reserva obterPorId(@PathVariable Long id) {
 		return reservaService.obterPorId(id);
 	}
+	
+	@PostMapping(value = "/reservas")
+	public ResponseEntity<String> incluir(@RequestBody Reserva reserva) {
+		reservaService.incluir(reserva);
+		return ResponseEntity.status(HttpStatus.CREATED).body("Reserva cadastrada!");
+	}
+	
 	
 	@DeleteMapping(value = "/reservas/{id}/excluir")
 	public String excluir(@PathVariable Long id) {
