@@ -21,6 +21,10 @@ public class Reserva {
 	@JoinColumn(name = "idPassageiro")
 	private Passageiro passageiro;
 	
+	//@OneToOne(cascade = CascadeType.PERSIST)
+	//@JoinColumn(name = "idPagamento")
+	//private Pagamento pagamento;
+	
 	private String origem;
 	private String destino;
 	private float preco;
@@ -34,6 +38,12 @@ public class Reserva {
 	public void setPassageiro(Passageiro passageiro) {
 		this.passageiro = passageiro;
 	}
+	//public Pagamento getPagamento() {
+	//	return pagamento;
+	//}
+	//public void setPassageiro(Pagamento pagamento) {
+	//	this.pagamento = pagamento;
+	//}
 	public String getOrigem() {
 		return origem;
 	}
