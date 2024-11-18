@@ -18,6 +18,7 @@ import org.springframework.http.ResponseEntity;
 import br.edu.infnet.paulojansen.model.domain.Passageiro;
 import br.edu.infnet.paulojansen.model.domain.Reserva;
 import br.edu.infnet.paulojansen.model.service.PassageiroService;
+import jakarta.validation.Valid;
 
 @RestController
 public class PassageiroController {
@@ -36,7 +37,7 @@ public class PassageiroController {
 	}
 	
 	@PostMapping(value = "/passageiros")
-	public ResponseEntity<String> incluir(@RequestBody Passageiro passageiro) {
+	public ResponseEntity<String> incluir(@RequestBody @Valid Passageiro passageiro) {
 		passageiroService.incluir(passageiro);
 		return ResponseEntity.status(HttpStatus.CREATED).body("Passageiro cadastrado!");
 	}

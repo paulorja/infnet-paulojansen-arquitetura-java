@@ -15,6 +15,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "TPassageiro")
@@ -24,6 +25,7 @@ public class Passageiro {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 	
+    @Size(min = 3, message = "O nome deve ter no mínimo 3 caracteres.")
 	private String nome;
 	private String cpf;
 	private String email;
