@@ -10,6 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Positive;
 
 @Entity
 @Table(name = "TReserva")
@@ -30,6 +31,8 @@ public class Reserva {
 	
 	private String origem;
 	private String destino;
+	
+    @Positive(message = "O preço deve ser um valor positivo.")
 	private float preco;
 	
     public Long getId() { return id; }

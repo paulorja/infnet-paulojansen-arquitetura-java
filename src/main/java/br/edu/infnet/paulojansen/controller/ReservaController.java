@@ -19,6 +19,7 @@ import br.edu.infnet.paulojansen.model.domain.Passageiro;
 import br.edu.infnet.paulojansen.model.domain.Reserva;
 import br.edu.infnet.paulojansen.model.service.PassageiroService;
 import br.edu.infnet.paulojansen.model.service.ReservaService;
+import jakarta.validation.Valid;
 
 @RestController
 public class ReservaController {
@@ -37,7 +38,7 @@ public class ReservaController {
 	}
 	
 	@PostMapping(value = "/reservas")
-	public ResponseEntity<String> incluir(@RequestBody Reserva reserva) {
+	public ResponseEntity<String> incluir(@RequestBody @Valid Reserva reserva) {
 		reservaService.incluir(reserva);
 		return ResponseEntity.status(HttpStatus.CREATED).body("Reserva cadastrada!");
 	}
