@@ -36,12 +36,6 @@ public class Passageiro {
 	@JsonManagedReference
 	private List<Reserva> reservas;
 	
-	//public Passageiro(String nome, String cpf, String email) {
-	//	this.nome = nome;
-	//	this.cpf = cpf;
-	//	this.email = email;	
-	//}
-	
 	public Passageiro() {
 		reservas = new ArrayList<Reserva>();
 	}

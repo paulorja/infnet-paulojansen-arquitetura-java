@@ -26,17 +26,6 @@ public class Loader implements ApplicationRunner {
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		System.out.println("Iniciando loader...");
-		Connection conn = DriverManager.getConnection("jdbc:h2:mem:testdb", "sa", "");
-		Statement stmt = conn.createStatement();
-
-        String sql = "CREATE TABLE IF NOT EXISTS produto (" +
-                     "id INT AUTO_INCREMENT PRIMARY KEY, " +
-                     "nome VARCHAR(255), " +
-                     "preco DECIMAL(10, 2))";
-        stmt.execute(sql);
-
-        System.out.println("Banco de dados H2 em memória criado com sucesso!");
-
 
 		FileReader file = new FileReader("files/passageiros.txt");
 		BufferedReader leitura = new BufferedReader(file);
@@ -48,7 +37,6 @@ public class Loader implements ApplicationRunner {
 			Passageiro passageiro = null;
 			switch (campos[0].toUpperCase()) {
 			case "P":
-				//passageiro = new Passageiro(campos[1], campos[2], campos[3]);
 				passageiro = new Passageiro();
 				passageiro.setNome(campos[1]);
 				passageiro.setCpf(campos[2]);
@@ -56,7 +44,6 @@ public class Loader implements ApplicationRunner {
 				
 				Endereco endereco = new Endereco();
 				endereco.setCep("09110090");
-				//passageiro.setEndereco(endereco);
 				
 				passageiroService.incluir(passageiro);
 				

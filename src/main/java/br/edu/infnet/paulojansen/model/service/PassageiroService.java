@@ -15,13 +15,6 @@ import br.edu.infnet.paulojansen.model.repository.PassageiroRepository;
 @Service
 public class PassageiroService {
 	
-    //private final PassageiroRepository passageiroRepository;
-
-    //@Autowired
-    //public PassageiroService(PassageiroRepository passageiroRepository) {
-    //    this.passageiroRepository = passageiroRepository;
-    //}
-	
 	@Autowired
 	private PassageiroRepository passageiroRepository;	
 	
@@ -29,13 +22,9 @@ public class PassageiroService {
 	
 	public void incluir(Passageiro passageiro) {
 		passageiroRepository.save(passageiro);
-		//mapaPassageiros.put(passageiro.getCpf(), passageiro);
 	}
 	
 	public Collection<Passageiro> obterLista() {
-		//List<Passageiro>  passageiros = new ArrayList<>();
-		//passageiroRepository.findAll().forEach(passageiros::add);
-		//return passageiros;
 		return (Collection<Passageiro>) passageiroRepository.findAll();
 	}
 	
@@ -54,11 +43,4 @@ public class PassageiroService {
 		passageiro.setEmail(email);
 		return passageiroRepository.save(passageiro);
 	}
-
-
-
-	//public List<Passageiro> obterPorNome(String nome) {
-	//	return passageiroRepository.findByNomeContaining(nome);
-	//}
-
 }

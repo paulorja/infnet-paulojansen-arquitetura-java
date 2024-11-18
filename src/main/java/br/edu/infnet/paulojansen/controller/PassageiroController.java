@@ -52,10 +52,4 @@ public class PassageiroController {
 		Passageiro passageiro = passageiroService.alterar(id, nome, cpf, email);
 		return ResponseEntity.ok(passageiro);
 	}
-	
-	//@GetMapping(value = "/buscar/passageiros/{nome}")
-	//public List<Passageiro> obterPorNome(@PathVariable String nome){
-	//	return passageiroService.obterPorNome(nome);
-	//}	
-	
 }

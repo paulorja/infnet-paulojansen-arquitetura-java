@@ -105,6 +105,34 @@
 			"response": []
 		},
 		{
+			"name": "Passageiro Criar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Novo passageiro\",\n    \"cpf\": \"4394343\",\n    \"email\": \"passageiro@email\",\n    \"endereco\": {\n        \"cep\": \"88101320\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/passageiros",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"passageiros"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Reservas Detalhes",
 			"request": {
 				"method": "GET",
@@ -125,10 +153,38 @@
 			"response": []
 		},
 		{
-			"name": "Rservas Listagem",
+			"name": "Reservas Listagem",
 			"request": {
 				"method": "GET",
 				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/reservas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reservas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reservas Criar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"preco\": 25.50,\n    \"passageiro\": {\n        \"nome\": \"Passagiero Silva\",\n        \"cpf\": \"94343784343\",\n        \"email\": \"email@passageiro.com\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
 					"raw": "http://localhost:8080/reservas",
 					"protocol": "http",
